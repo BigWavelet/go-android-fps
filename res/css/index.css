@@ -1,0 +1,28 @@
+html, body{
+  height: 100%;
+}
+
+.container-full {
+  margin: 0 auto;
+  width: 100%;
+}
+
+.phone-screen {
+	min-height: 8em;
+	width: 100%;
+	text-align: center;
+}
+
+.header-control {
+    width: auto;
+    float: right;
+}
+
+.right-align {
+    float: right;
+}
+
+pre.console {
+	height: 10em;
+	overflow: auto;
+}

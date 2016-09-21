@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>goperf</title>
+  <link rel="shortcut icon" type="image/png" href="/res/images/favicon.ico" />
+  <link rel="stylesheet" type="text/css" href="/res/bootstrap-3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="/res/font-awesome-4.6.3/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="/res/css/style.css">
+</head>
+
+<body id="app">
+  <nav class="navbar navbar-inverse">
+    <div class="container">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/">Go Performance</a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
+          <ul class="nav navbar-nav">
+          </ul>
+          <ul id="nav-right-bar" class="nav navbar-nav navbar-right">
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+
+  <div class="page-header" id="banner">
+    <div class="row">
+      <div class="col-lg-2 col-md-2 col-sm-4">
+        <h4 class="text-center">场景列表</h4>
+        <div class="list-group table-of-contents" id="file-list">
+        </div>
+      </div>
+      <div class="col-sm-offset-1 col-lg-6 col-md-6 col-sm-5">
+        <div class="container">
+          <div class="panel panel-primary">
+            <div class="panel-heading">
+              <div class="row">
+                 <h4 class="col-md-6">帧率采集</h4>
+                <div class=" pull-right">
+                  <button type="button" class="btn btn-warning" id="start-test">开始测试</button>
+                  <button type="button" class="btn btn-danger"  disabled="disabled" style= "margin-right:10px"id="end-test">停止测试</button>
+                </div>
+              </div>
+            </div>
+            <div class="panel-body">
+              <div class="col-md-12">
+                <div id="chart-fps" style="width: 100%;height:250px;"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="text-center">
+      go performance written by <a href="https://github.com/bigwavelet">bigwavelet</a>
+    </div>
+  </footer>
+
+
+
+
+
+
+
+<!-- 模态框（Modal） -->
+<div class="modal fade" id="modal-filename" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h4 class="modal-title" id="myModalLabel">请输入场景名称</h4>
+            </div>
+            <div class="modal-body">
+              <input type="text" class="form-control" id="input-filename">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                <button type="button" class="btn btn-primary" id="confirm-filename">确定</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div>
+
+
+
+
+<!-- 模态框（Modal） -->
+<div class="modal fade" id="modal-fps" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content" style="width:1000px">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h4 class="modal-title" id="fps-title">场景帧率数据</h4>
+            </div>
+            <div class="modal-body">
+              <span class="icon-bar btn-primary" id="max-fps-data">最高帧率:</span><br>
+              <span class="icon-bar btn-danger" id="min-fps-data">最低帧率:</span><br>
+              <span class="icon-bar btn-info" id="aver-fps-data">平均帧率:</span><br>
+              <div id="chart-single-fps" style="width:1000px;height:250px;"></div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div>
+
+
+
+  
+  <script src="/res/js/jquery-3.1.0.min.js"></script>
+  <script src="/res/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+  <script src="/res/js/vue-1.0.min.js"></script>
+  <script src="/res/js/echarts.min.js"></script>
+  <script src="/res/js/common.js"></script>
+  <script src="/res/js/perf.js"></script>
+
+</body>
+</header>
+
+</html>
